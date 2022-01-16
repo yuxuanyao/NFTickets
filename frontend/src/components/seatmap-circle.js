@@ -2,6 +2,8 @@ import React from 'react';
 import '../css/seatmap.css';
 
 export default class Seatmapcircle extends React.Component {
+
+
     render() {
         return (
             <div>
@@ -21,7 +23,7 @@ export default class Seatmapcircle extends React.Component {
                             <path fill="#FFF"
                                 d="M 544.511719 367.789062 L 609.195312 479.824219 L 544.511719 591.855469 L 415.148438 591.855469 L 350.414062 479.824219 L 415.148438 367.789062 L 544.511719 367.789062 M 549.351562 359.449219 L 410.3125 359.449219 L 340.789062 479.824219 L 410.3125 600.199219 L 549.351562 600.199219 L 618.871094 479.824219 Z M 549.351562 359.449219" />
                         </g>
-                        <g fill="#FFF" className="bar" >
+                        <g fill="#FFF"  >
                             <g>
                                 <g>
                                     <path className="bar"
@@ -30,7 +32,7 @@ export default class Seatmapcircle extends React.Component {
                                 </g>
                             </g>
                         </g>
-                        <g fill="#FFF" className="bar">
+                        <g fill="#FFF" >
                             <g>
                                 <g>
                                     <path
@@ -39,7 +41,7 @@ export default class Seatmapcircle extends React.Component {
                                 </g>
                             </g>
                         </g>
-                        <g fill="#FFF" className="bar">
+                        <g fill="#FFF" >
                             <g>
                                 <g>
                                     <path
