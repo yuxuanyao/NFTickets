@@ -1,3 +1,4 @@
+
 .table:hover{
 	stroke-width: 3px;
 	stroke-linejoin: round;
@@ -10,4 +11,9 @@
 	stroke-linejoin: round;
 	fill: #000 !important;
 	cursor: pointer;
+}
+
+.seatmap{
+    display: flex;
+    justify-content: center;
 }

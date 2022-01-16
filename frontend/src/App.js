@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
 import Web3 from 'web3';
-import Seatmap from './components/Seatmap.js';
+import Seatmap from './components/seatmap.js';
 import Navbar from './components/Navbar';
 import React, { Component } from 'react'
 
@@ -44,9 +44,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <><Navbar account={this.state.account} /><header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-        </header></>
+        <Navbar account={this.state.account} />
+        <Seatmap />
       </div>
     );
   }
