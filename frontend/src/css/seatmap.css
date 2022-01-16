@@ -1,0 +1,13 @@
+.table:hover{
+	stroke-width: 3px;
+	stroke-linejoin: round;
+	fill: #222 !important;
+	cursor: pointer;
+}
+
+.bar:hover{
+	stroke-width: 3px;
+	stroke-linejoin: round;
+	fill: #000 !important;
+	cursor: pointer;
+}
