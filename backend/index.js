@@ -26,35 +26,131 @@ const lockaddresses = [
 
 
 var membersOnlyArray = []
-
-for (var i = 0; i < lockaddresses.length; i++) {
-  const { membersOnly } = configureUnlock(
-    {
-      yieldPaywallConfig: () => {
-        return {
-          locks: {
-            [lockaddresses[i]]: {
-              network: 4,
-            },
+var {membersOnly} = configureUnlock(
+  {
+    yieldPaywallConfig: () => {
+      return {
+        locks: {
+          '0x5a0EA9891e55177284c89e9D793bBFc1Cdc3b25D' : {
+            network: 4,
           },
-        }
-      },
-      getUserEthereumAddress: async (request) => {
-        return request.cookies.userAddress
-      },
-      updateUserEthereumAddress: async (
-        request,
-        response,
-        address,
-      ) => {
-        response.cookie('userAddress', address)
-      },
+        },
+      }
     },
-    app
-  )
-  membersOnlyArray.push(membersOnly)
-  console.log("Pushed ", i)
-}
+    getUserEthereumAddress: async (request) => {
+      return request.cookies.userAddress
+    },
+    updateUserEthereumAddress: async (
+      request,
+      response,
+      address,
+    ) => {
+      response.cookie('userAddress', address)
+    },
+  },
+  app
+)
+membersOnlyArray.push(membersOnly)
+var {membersOnly} = configureUnlock(
+  {
+    yieldPaywallConfig: () => {
+      return {
+        locks: {
+          '0xA9cFD6e26413ecf195D3732078DaE260c5Dd73C0' : {
+            network: 4,
+          },
+        },
+      }
+    },
+    getUserEthereumAddress: async (request) => {
+      return request.cookies.userAddress
+    },
+    updateUserEthereumAddress: async (
+      request,
+      response,
+      address,
+    ) => {
+      response.cookie('userAddress', address)
+    },
+  },
+  app
+)
+membersOnlyArray.push(membersOnly)
+var {membersOnly} = configureUnlock(
+  {
+    yieldPaywallConfig: () => {
+      return {
+        locks: {
+          '0x30F52cDAc5b058FD2dd68bB262821b82dA157008' : {
+            network: 4,
+          },
+        },
+      }
+    },
+    getUserEthereumAddress: async (request) => {
+      return request.cookies.userAddress
+    },
+    updateUserEthereumAddress: async (
+      request,
+      response,
+      address,
+    ) => {
+      response.cookie('userAddress', address)
+    },
+  },
+  app
+)
+membersOnlyArray.push(membersOnly)
+var {membersOnly} = configureUnlock(
+  {
+    yieldPaywallConfig: () => {
+      return {
+        locks: {
+          '0xd130394491770ff24239AC9e6B0A9b0D27999B40' : {
+            network: 4,
+          },
+        },
+      }
+    },
+    getUserEthereumAddress: async (request) => {
+      return request.cookies.userAddress
+    },
+    updateUserEthereumAddress: async (
+      request,
+      response,
+      address,
+    ) => {
+      response.cookie('userAddress', address)
+    },
+  },
+  app
+)
+membersOnlyArray.push(membersOnly)
+var {membersOnly} = configureUnlock(
+  {
+    yieldPaywallConfig: () => {
+      return {
+        locks: {
+          '0xb1f784e0d42F712A4e49c2A01F678A93b0E5A033' : {
+            network: 4,
+          },
+        },
+      }
+    },
+    getUserEthereumAddress: async (request) => {
+      return request.cookies.userAddress
+    },
+    updateUserEthereumAddress: async (
+      request,
+      response,
+      address,
+    ) => {
+      response.cookie('userAddress', address)
+    },
+  },
+  app
+)
+membersOnlyArray.push(membersOnly)
 
 
 
@@ -122,30 +218,25 @@ app.get('/', (req, res) => {
                     <path fill="#FFF" class="table"
                         d="M 441.640625 783.039062 L 518.59375 783.039062 L 518.59375 908.742188 L 441.640625 908.742188 L 441.640625 783.039062" />
                   </a>
-                  
                   <path fill="#222"
                       d="M 517.695312 907.847656 L 519.492188 907.847656 L 519.492188 909.636719 L 517.695312 909.636719 L 517.695312 907.847656 M 440.742188 783.933594 L 442.539062 783.933594 L 442.539062 907.847656 L 440.742188 907.847656 L 440.742188 783.933594 M 440.742188 907.847656 L 442.539062 907.847656 L 442.539062 909.636719 L 440.742188 909.636719 L 440.742188 907.847656 M 517.695312 783.933594 L 519.492188 783.933594 L 519.492188 907.847656 L 517.695312 907.847656 L 517.695312 783.933594 M 442.539062 907.847656 L 517.695312 907.847656 L 517.695312 909.636719 L 442.539062 909.636719 L 442.539062 907.847656 M 517.695312 782.144531 L 519.492188 782.144531 L 519.492188 783.933594 L 517.695312 783.933594 L 517.695312 782.144531 M 440.742188 782.144531 L 442.539062 782.144531 L 442.539062 783.933594 L 440.742188 783.933594 L 440.742188 782.144531 M 442.539062 782.144531 L 517.695312 782.144531 L 517.695312 783.933594 L 442.539062 783.933594 L 442.539062 782.144531" />
-                  
                   <a href="/table2">
                       <path fill="#FFF" class="table"
                       d="M 441.640625 42.519531 L 518.59375 42.519531 L 518.59375 168.222656 L 441.640625 168.222656 L 441.640625 42.519531" />
                   </a>
-
-                      <path fill="#222"
+                  <path fill="#222"
                       d="M 517.695312 167.328125 L 519.492188 167.328125 L 519.492188 169.117188 L 517.695312 169.117188 L 517.695312 167.328125 M 440.742188 43.414062 L 442.539062 43.414062 L 442.539062 167.328125 L 440.742188 167.328125 L 440.742188 43.414062 M 440.742188 167.328125 L 442.539062 167.328125 L 442.539062 169.117188 L 440.742188 169.117188 L 440.742188 167.328125 M 517.695312 43.414062 L 519.492188 43.414062 L 519.492188 167.328125 L 517.695312 167.328125 L 517.695312 43.414062 M 442.539062 167.328125 L 517.695312 167.328125 L 517.695312 169.117188 L 442.539062 169.117188 L 442.539062 167.328125 M 517.695312 41.625 L 519.492188 41.625 L 519.492188 43.414062 L 517.695312 43.414062 L 517.695312 41.625 M 440.742188 41.625 L 442.539062 41.625 L 442.539062 43.414062 L 440.742188 43.414062 L 440.742188 41.625 M 442.539062 41.625 L 517.695312 41.625 L 517.695312 43.414062 L 442.539062 43.414062 L 442.539062 41.625" />
-                  
                   <a href="/table3">
-                      <path fill="#FFF" class="table"
+                  <path fill="#FFF" class="table"
                       d="M 233.316406 118.128906 L 299.964844 79.65625 L 362.808594 188.523438 L 296.160156 226.996094 L 233.316406 118.128906" />
                   </a>
-                      <path fill="#222"
+                  <path fill="#222"
                       d="M 361.585938 188.195312 L 363.140625 187.296875 L 364.035156 188.847656 L 362.480469 189.746094 L 361.585938 188.195312 M 232.988281 119.351562 L 234.542969 118.453125 L 296.492188 225.769531 L 294.9375 226.667969 L 232.988281 119.351562 M 294.9375 226.667969 L 296.492188 225.769531 L 297.386719 227.320312 L 295.832031 228.21875 L 294.9375 226.667969 M 299.632812 80.878906 L 301.191406 79.980469 L 363.140625 187.296875 L 361.585938 188.195312 L 299.632812 80.878906 M 296.492188 225.769531 L 361.585938 188.195312 L 362.480469 189.746094 L 297.386719 227.320312 L 296.492188 225.769531 M 298.738281 79.328125 L 300.296875 78.433594 L 301.191406 79.980469 L 299.632812 80.878906 L 298.738281 79.328125 M 232.09375 117.800781 L 233.648438 116.90625 L 234.542969 118.453125 L 232.988281 119.351562 L 232.09375 117.800781 M 233.648438 116.90625 L 298.738281 79.328125 L 299.632812 80.878906 L 234.542969 118.453125 L 233.648438 116.90625" />
-                  
                   <a href="/table4">
-                      <path fill="#FFF" class="table"
+                  <path fill="#FFF" class="table"
                       d="M 83.257812 296.269531 L 121.160156 229.296875 L 230.558594 291.210938 L 192.65625 358.183594 L 83.257812 296.269531" />
                   </a>
-                      <path fill="#222"
+                  <path fill="#222"
                       d="M 229.335938 291.550781 L 230.222656 289.988281 L 231.777344 290.871094 L 230.894531 292.433594 L 229.335938 291.550781 M 83.59375 297.492188 L 84.476562 295.929688 L 192.316406 356.960938 L 191.433594 358.523438 L 83.59375 297.492188 M 191.433594 358.523438 L 192.316406 356.960938 L 193.875 357.84375 L 192.992188 359.40625 L 191.433594 358.523438 M 121.496094 230.519531 L 122.378906 228.957031 L 230.222656 289.988281 L 229.335938 291.550781 L 121.496094 230.519531 M 192.316406 356.960938 L 229.335938 291.550781 L 230.894531 292.433594 L 193.875 357.84375 L 192.316406 356.960938 M 119.9375 229.636719 L 120.824219 228.074219 L 122.378906 228.957031 L 121.496094 230.519531 L 119.9375 229.636719 M 82.035156 296.609375 L 82.917969 295.046875 L 84.476562 295.929688 L 83.59375 297.492188 L 82.035156 296.609375 M 82.917969 295.046875 L 119.9375 229.636719 L 121.496094 230.519531 L 84.476562 295.929688 L 82.917969 295.046875" />
                   <path fill="#FFF" class="table"
                       d="M 655.164062 79.777344 L 722.113281 117.71875 L 660.132812 227.082031 L 593.183594 189.136719 L 655.164062 79.777344" />
@@ -261,7 +352,7 @@ app.get('/table3', membersOnlyArray[3](), (req, res) => {
 })
 
 app.get('/table4', membersOnlyArray[4](), (req, res) => {
-
+  
   res.send(`<h1>World Clocks</h1>
   <p>Thank you for your support!</p>
   ${zones.map((group) => {
