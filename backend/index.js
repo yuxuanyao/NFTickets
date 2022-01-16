@@ -23,8 +23,6 @@ const lockaddresses = [
 ]
 
 
-
-
 var membersOnlyArray = []
 
 for (var i = 0; i < lockaddresses.length; i++) {
@@ -64,16 +62,28 @@ const dateInZone = (zone, label) => {
   return `${d.toLocaleString('en-US', { timeZone: zone })} in ${city}`
 }
 
+
+
 app.get('/', (req, res) => {
   // seats[req.query.seat] = true
   // res.send(`<p>${req.query.seat}<p>`)
   res.send(`
-    <div>
-      <link rel="stylesheet" type="text/css" href="css/style.css" />
-      <nav className="navbar">
-        <li class="li1">${req.cookies.userAddress || 'Sign in using Metamask or w/e wallet provider'}</li>
-      </nav>
-          <div className="seatmap">
+
+          <link rel="stylesheet" type="text/css" href="css/style.css" />
+          <div>
+          <header>
+            
+            <nav class="navbar" >
+              <ul class="navcontainer">
+                
+                <li class="li1">${req.cookies.userAddress || 'Sign in using Metamask or w/e wallet provider'}</li>
+                
+              </ul>
+            <div id="logo"><img src="./NFTickets.png" alt="Logo"></img></div>
+            </nav>
+          </header>
+          <div class="seatmap">
+          
               <svg xmlns="http://www.w3.org/2000/svg" width="960" viewBox="0 0 960 960" height="960" version="1.0">
                   <defs>
                       <clipPath id="a">
@@ -181,7 +191,8 @@ app.get('/', (req, res) => {
                       d="M 743.234375 827.089844 L 744.789062 826.191406 L 745.683594 827.742188 L 744.128906 828.640625 L 743.234375 827.089844 M 614.636719 758.246094 L 616.191406 757.347656 L 678.140625 864.664062 L 676.585938 865.5625 L 614.636719 758.246094 M 676.585938 865.5625 L 678.140625 864.664062 L 679.035156 866.214844 L 677.480469 867.113281 L 676.585938 865.5625 M 681.285156 719.773438 L 682.839844 718.875 L 744.789062 826.191406 L 743.234375 827.089844 L 681.285156 719.773438 M 678.140625 864.664062 L 743.234375 827.089844 L 744.128906 828.640625 L 679.035156 866.214844 L 678.140625 864.664062 M 680.390625 718.222656 L 681.945312 717.324219 L 682.839844 718.875 L 681.285156 719.773438 L 680.390625 718.222656 M 613.742188 756.695312 L 615.296875 755.796875 L 616.191406 757.347656 L 614.636719 758.246094 L 613.742188 756.695312 M 615.296875 755.796875 L 680.390625 718.222656 L 681.285156 719.773438 L 616.191406 757.347656 L 615.296875 755.796875" />
               </svg>
           </div>
-      </div >
+          </div>
+   
   `)
   console.log(seats)
 })
