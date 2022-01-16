@@ -33,7 +33,7 @@ for (var i = 0; i < lockaddresses.length; i++) {
       yieldPaywallConfig: () => {
         return {
           locks: {
-            '0x5a0EA9891e55177284c89e9D793bBFc1Cdc3b25D': {
+            [lockaddresses[i]]: {
               network: 4,
             },
           },
@@ -53,6 +53,7 @@ for (var i = 0; i < lockaddresses.length; i++) {
     app
   )
   membersOnlyArray.push(membersOnly)
+  console.log("Pushed ", i)
 }
 
 
@@ -82,13 +83,15 @@ app.get('/', (req, res) => {
                   </defs>
                   <path fill="#222"
                       d="M 479.617188 959.234375 C 351.566406 959.234375 230.992188 909.390625 140.511719 818.722656 C 49.839844 728.242188 0 607.667969 0 479.617188 C 0 351.566406 49.839844 230.992188 140.511719 140.511719 C 230.992188 49.839844 351.566406 0 479.617188 0 C 607.667969 0 728.242188 49.839844 818.722656 140.511719 C 909.390625 231.183594 959.234375 351.566406 959.234375 479.617188 C 959.234375 607.667969 909.390625 728.242188 818.722656 818.722656 C 728.242188 909.390625 607.667969 959.234375 479.617188 959.234375 Z M 479.617188 28.753906 C 359.234375 28.753906 245.941406 75.71875 160.832031 160.832031 C 75.71875 245.941406 28.753906 359.234375 28.753906 479.617188 C 28.753906 600 75.71875 713.289062 160.832031 798.402344 C 245.941406 883.515625 359.234375 930.480469 479.617188 930.480469 C 600 930.480469 713.289062 883.515625 798.402344 798.402344 C 883.515625 713.289062 930.480469 600 930.480469 479.617188 C 930.480469 359.234375 883.515625 245.941406 798.402344 160.832031 C 713.289062 75.71875 600 28.753906 479.617188 28.753906 Z M 479.617188 28.753906" />
-                  <path fill="#222" class="bar"
+                  <a href="/bar">
+                    <path fill="#222" class="bar"
                       d="M 410.976562 598.972656 L 342.179688 479.824219 L 410.976562 360.671875 L 548.683594 360.671875 L 617.480469 479.824219 L 548.683594 598.972656 Z M 410.976562 598.972656" />
+                  </a>  
                   <g clip-path="url(#a)">
-                      <path fill="#FFF"
-                          d="M 544.511719 367.789062 L 609.195312 479.824219 L 544.511719 591.855469 L 415.148438 591.855469 L 350.414062 479.824219 L 415.148438 367.789062 L 544.511719 367.789062 M 549.351562 359.449219 L 410.3125 359.449219 L 340.789062 479.824219 L 410.3125 600.199219 L 549.351562 600.199219 L 618.871094 479.824219 Z M 549.351562 359.449219" />
+                    <path fill="#FFF"
+                        d="M 544.511719 367.789062 L 609.195312 479.824219 L 544.511719 591.855469 L 415.148438 591.855469 L 350.414062 479.824219 L 415.148438 367.789062 L 544.511719 367.789062 M 549.351562 359.449219 L 410.3125 359.449219 L 340.789062 479.824219 L 410.3125 600.199219 L 549.351562 600.199219 L 618.871094 479.824219 Z M 549.351562 359.449219" />
                   </g>
-                  <g fill="#FFF"  >
+                  <g fill="#FFF">
                       <g>
                           <g>
                               <path 
@@ -176,7 +179,61 @@ app.get('/', (req, res) => {
 
 
 
-app.get('/bar', membersOnlyArray[0], (req, res) => {
+app.get('/bar', membersOnlyArray[0](), (req, res) => {
+
+  res.send(`<h1>World Clocks</h1>
+  <p>Thank you for your support!</p>
+  ${zones.map((group) => {
+    return `<div>
+      <h2>${group.group}</h2>
+      <ul>
+        ${group.zones.map(({ value, name }) => {
+      return `<li>${dateInZone(value, name)}</li>`
+    }).join("")}
+      </ul>
+    </div>`
+  }).join("")}
+  <p>Premium version: select any time zone!</p>
+  <p><a href="/logout">Logout</a></p>`)
+})
+
+app.get('/table1', membersOnlyArray[0](), (req, res) => {
+
+  res.send(`<h1>World Clocks</h1>
+  <p>Thank you for your support!</p>
+  ${zones.map((group) => {
+    return `<div>
+      <h2>${group.group}</h2>
+      <ul>
+        ${group.zones.map(({ value, name }) => {
+      return `<li>${dateInZone(value, name)}</li>`
+    }).join("")}
+      </ul>
+    </div>`
+  }).join("")}
+  <p>Premium version: select any time zone!</p>
+  <p><a href="/logout">Logout</a></p>`)
+})
+
+app.get('/table2', membersOnlyArray[0](), (req, res) => {
+
+  res.send(`<h1>World Clocks</h1>
+  <p>Thank you for your support!</p>
+  ${zones.map((group) => {
+    return `<div>
+      <h2>${group.group}</h2>
+      <ul>
+        ${group.zones.map(({ value, name }) => {
+      return `<li>${dateInZone(value, name)}</li>`
+    }).join("")}
+      </ul>
+    </div>`
+  }).join("")}
+  <p>Premium version: select any time zone!</p>
+  <p><a href="/logout">Logout</a></p>`)
+})
+
+app.get('/table3', membersOnlyArray[0](), (req, res) => {
 
   res.send(`<h1>World Clocks</h1>
   <p>Thank you for your support!</p>
