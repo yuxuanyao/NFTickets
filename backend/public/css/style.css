@@ -17,3 +17,26 @@
     display: flex;
     justify-content: center;
 }
+
+.nav{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333;
+}
+
+.li1 {
+	float: right;
+	display: block;
+	color: rgb(255, 255, 255);
+	text-align: center;
+	padding: 14px 16px;
+	font-family: Helvetica;
+	font-size: 26px;
+	border-radius: 25px;
+	background: #000000;
+	padding: 20px;
+	width: 650px;
+	height: 35px;
+}

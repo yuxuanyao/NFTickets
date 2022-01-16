@@ -59,6 +59,9 @@ app.get('/', (req, res) => {
   res.send(`
     <div>
       <link rel="stylesheet" type="text/css" href="css/style.css" />
+      <nav className="navbar">
+        <li class="li1">${req.cookies.userAddress || 'Sign in using Metamask'}</li>
+      </nav>
           <div className="seatmap">
               <svg xmlns="http://www.w3.org/2000/svg" width="960" viewBox="0 0 960 960" height="960" version="1.0">
                   <defs>
@@ -178,6 +181,9 @@ app.get('/logout', (req, res) => {
   res.clearCookie('userAddress')
   res.redirect('/')
 })
+
+
+app.get('/')
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
